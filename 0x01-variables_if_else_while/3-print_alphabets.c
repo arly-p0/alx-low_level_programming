@@ -11,7 +11,7 @@ int main(void)
 
 	while (i <= 122)
 	{
-		putchar(n);
+		putchar(i);
 	}
 	while (j <= 90)
 	{
