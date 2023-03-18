@@ -1,8 +1,9 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <time.h>
 /**
- * main - entery point
- * Return: 0 (success)
+ * main - Entry point
+ * Return: Always 0 (success)
  */
 int main(void)
 {
@@ -10,7 +11,7 @@ int main(void)
 	char low;
 
 	for (d = '0'; d <= '9'; d++)
-	putchar(low);
+	putchar(d);
 
 	for (low = 'a'; low <= 'f'; low++)
 	putchar('\n');
