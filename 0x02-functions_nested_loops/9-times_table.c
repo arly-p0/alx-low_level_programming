@@ -24,7 +24,7 @@ void times_tables(void)
 	}
 	else
 	{
-	if (y != o)
+	if (y != 0)
 	{
 	_putchar(44);
 	_putchar(32);
