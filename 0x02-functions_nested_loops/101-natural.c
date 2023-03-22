@@ -10,7 +10,7 @@ int main(void)
 	while (i < 1824)
 	{
 	if ((i % 3 == 0) || (i % 5 == 0)
-	{
+	{		
 	z += i;
 	}
 	i++;
