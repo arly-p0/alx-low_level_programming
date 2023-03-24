@@ -18,7 +18,7 @@ int main(void)
 	maxf = number / x;
 	}
 	}
-	printf("%d\n", maxf);
+	printf("%ld\n", maxf);
 	return (0);
 }
 
