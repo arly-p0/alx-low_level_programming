@@ -13,12 +13,15 @@ int _strspn(char *s, char *accept)
 
 	value = 0;
 
-	for (j = 0; s[j] != '\0'; b++)
+	for (j = 0; s[j] != '\0'; j++)
 	{
-		if (accept[b] == s[j])
-		{
-			value++;
-			check = 1;
-		}
+		check = 0;
+
+		for (b = 0; accept[b] != '\0'; b++)
+			if (accept[b] == s[j])
+			{
+				value++;
+				check = 1;
+			}
 	}
 }
