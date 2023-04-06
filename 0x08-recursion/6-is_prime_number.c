@@ -1,20 +1,37 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * is_prime_number - function that returns the input of a prime number
- * @n: the input of the integer
- *
- * Return: 1 if input of the integer is a prime number, otherwise 0.
+ * inspect - inspect if number is prime
+ * @p: the first integer
+ * @q: the second integer
+ * Return: 1 if the input integer is a prime number, otherwise 0.
  */
-int is_prime_number(int n)
+int inspect(int p, int q)
 {
-	if (*s != '\n' && *s != '\0')
+	if (q <= 1 || q % p == 0)
 	{
-		_putchar(*s);
-		_puts_recursion(s + 1);
+		return (0);
+	}
+	else if (p > q / 2)
+	{
+		return (1);
 	}
 	else
 	{
-		_putchar('\n');
+		return (inspect(p + 1, q));
 	}
+}
+
+/**
+ * is_prime_number - prints the input integer of a prime number
+ * @n: a prime number integer
+ * Return: 1 if the input integer is a prime number, otherwise 0.
+ */
+int is_prime_number(int n)
+{
+	if (n == 2)
+	{
+		return (1);
+	}
+	return (inspect(2, n));
 }
