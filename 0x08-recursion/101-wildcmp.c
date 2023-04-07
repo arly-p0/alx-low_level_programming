@@ -10,7 +10,7 @@
  */
 int str_inspect(char *s1, char *s2, int u, int v)
 {
-	if (*s1[u] == '\0' && *s2[v] == '\0')
+	if (s1[u] == '\0' && s2[v] == '\0')
 	{
 		return (1);
 	}
