@@ -1,40 +1,40 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * inspect_str - inspect two strings
- * @k: string 1
- * @l: string 2
- * @m: integer left
- * @n: integer right
- * Return: 1 if the string can be considered identical, 0 otherwise
+ * str_inspect - inspect a function that compares two string
+ * @s1: string 1 to be inspected
+ * @s2: string 2 to be inspected
+ * @u: integer left
+ * @v: integer right
+ * Return: 1 if the string can be considered identical, or 0 otherwise
  */
-int inspect_str(char *k, char *l, int m, int n)
+int str_inspect(char *s1, char *s2, int u, int v)
 {
-	if (k[m] == '\0' && l[n] == '\0')
+	if (*s1[u] == '\0' && *s2[v] == '\0')
 	{
-		return (0);
+		return (1);
 	}
-	if (k[m] == l[n])
+	if (s1[u] == s2[v])
 	{
-		return (inspect_str(k, l, m + 1, n + 1));
+		return (str_inspect(s1, s2, u + 1, v + 1));
 	}
-	if (k[m] == '\0' && l[n] == '*')
+	if (s1[u] == '\0' && s2[v] == '*')
 	{
-		return (inspect_str(k, l, m, n + 1));
+		return (str_inspect(s1, s2, u, v + 1));
 	}
-	if (k[n] == '*')
+	if (s2[v] == '*')
 	{
-		return (inspect_str(k, l, m + 1, n) || inspect_str(k, k, l, n + 1));
+		return (str_inspect(s1, s2, u + 1, v) || str_inspect(s1, s2, u, v + 1));
 	}
 	return (0);
 }
 /**
- * wildcmp - compares two string
- * @s1: first spring
- * @s2: second spring
- * Return: 1 if the string can be considered identical, or 0 otherwise
+ * wildcmp - a function that compares two string 
+ * @s1: string one to be compared
+ * @s2: string two to be compared
+ * Return: 1 if the string can be considered identical, or  0 otherwise
  */
 int wildcmp(char *s1, char *s2)
 {
-	return (inspect_str(k, l, 0, 0));
+	return (str_inspect(s1, s2, 0, 0));
 }
