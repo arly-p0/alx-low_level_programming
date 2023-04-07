@@ -2,14 +2,14 @@
 #include <stdio.h>
 /**
  * l_recursion - prints a certain lenght of string
- * @i: the string
+ * @p: the string
  * Return: the character of the lenght
  */
-int l_recursion(char *i)
+int l_recursion(char *p)
 {
-	if (i[0] != '\0')
+	if (p[0] != 0)
 	{
-		return (1 + l_recursion(i + 1));
+		return (1 + l_recursion(p + 1));
 	}
 	return (0);
 }
@@ -22,15 +22,21 @@ int l_recursion(char *i)
  */
 int inspect_pal(char *s, int u, int v)
 {
-	if (*(s + u) != *(s + v - 1))
+	if (s[u] == s[v])
 	{
-		return (0);
+		if (u > v / 2)
+		{
+			return (1);
+		}
+		else
+		{
+			return (inspect_pal(s, u + 1, v - 1));
+		}
+		else
+		{
+			return (0);
+		}
 	}
-	if (u >= v)
-	{
-		return (1);
-	}
-	return (inspect_pal(s, u + 1, v - 1));
 }
 /**
  * is_palindrome - a function that prints a string of a palindrome
@@ -39,5 +45,5 @@ int inspect_pal(char *s, int u, int v)
  */
 int is_palindrome(char *s)
 {
-	return(inspect_pal(s, 0, l_recursion(s)-1));
+	return (inspect_pal(s, 0, l_recursion(s) - 1));
 }
