@@ -29,7 +29,7 @@ int str_inspect(char *s1, char *s2, int u, int v)
 	return (0);
 }
 /**
- * wildcmp - a function that compares two string 
+ * wildcmp - function that compares two strings
  * @s1: string one to be compared
  * @s2: string two to be compared
  * Return: 1 if the string can be considered identical, or  0 otherwise
