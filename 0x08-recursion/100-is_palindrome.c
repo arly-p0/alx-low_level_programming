@@ -23,7 +23,7 @@ int l_recursion(char *p)
 int inspect_pal(char *s, int u, int v)
 {
 	if (s[u] == s[v])
-	{
+
 		if (u > v / 2)
 		{
 			return (1);
@@ -36,7 +36,6 @@ int inspect_pal(char *s, int u, int v)
 		{
 			return (0);
 		}
-	}
 }
 /**
  * is_palindrome - a function that prints a string of a palindrome
