@@ -1,34 +1,41 @@
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 /**
  * main - programm that adds positive numbers
  * @argc: argument integer
  * @argv: argument string
- * Return: 0 (success)
+ * Return: 1 if one number contains symbols that are not digits,
+ *else prints error
  */
 int main(int argc, char *argv[])
 {
-	int x, y, z;
-	int sum = 0;
+	int n;
+	unsigned int m, sum = 0;
+	char *i;
 
-	for (x = 1; x < argc; x++)
+	if (argc > 1)
 	{
-		for (y = 0; argv[x][y] != '\0'; y++)
+		for ( n = 1; n < argc; n++)
 		{
-			if (argv[x][y] == 0)
+			i = argv[n];
+			for (m = 0; m < strlen(i); m++)
 			{
-				printf("Error\n");
-				return (1);
+				if (i[m] < 48 || i[m] > 57)
+				{
+					printf("Error\n");
+					return (1);
+				}
 			}
+			sum = sum + atoi(i);
+			i++;
 		}
-		z = atoi(argv[x]);
-		sum = sum + z;
+		printf("%d\n", sum);
 	}
-	if (argc == 1)
+	else
 	{
 		printf("0\n");
-		return (0);
 	}
-	printf("%d\n", sum);
 	return (0);
 }
