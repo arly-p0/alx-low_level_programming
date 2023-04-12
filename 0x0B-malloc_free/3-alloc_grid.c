@@ -2,45 +2,44 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * alloc_grid - returns a pointer of a 2 dimensional array of integers
- * @width: first integer
- * @height: second integer
- * Return: NULL on failure
+ * alloc_grid - returns a pointer to a 2 dimensional array of integers
+ * @width: integer of a width
+ * @height: integer of a height
+ * Return: NULL if height or width negative is 0.
  */
 int **alloc_grid(int width, int height)
 {
-	int **lag;
-	int l, m, p, q;
+	int **leng;
+	int y, z;
 
 	if (width <= 0 || height <= 0)
 	{
 		return (NULL);
 	}
-	lag = malloc(sizeof(int *) * height);
-	if (lag == NULL)
+	leng = malloc(sizeof(int *) * height);
+
+	if (leng == NULL)
 	{
-		free(lag);
+		free(leng);
 		return (NULL);
 	}
-	for (l = 0; l < height; l++)
+	for (y = 0; y < height; y++)
 	{
-		lag[l] = malloc(sizeof(int) * width);
-		if (lag[l] == NULL)
+		leng[y] = malloc(sizeof(int) * width);
+		if (leng[y] == NULL)
 		{
-			for (m = l; m >= 0; m--)
+			for (z = y; z >= 0; z--)
 			{
-				free(lag[l]);
+				free(leng[z]);
 			}
-			free(lag);
+			free(leng);
 			return (NULL);
 		}
 	}
-	for (p = 0; p < height; p++)
+	for (y = 0; y < height; y++)
 	{
-		for (q = 0; q < width; q++)
-		{
-			lag[p][q] = 0;
-		}
+		for (z = 0; z < width; z++)
+			leng[y][z] = 0;
 	}
-	return (lag);
+	return (leng);
 }
