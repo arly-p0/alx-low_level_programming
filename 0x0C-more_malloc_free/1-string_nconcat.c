@@ -11,9 +11,12 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *ptrs;
-	unsigned int k, l, m, p;
+	unsigned int k = 0, l = 0, m = 0, p = 0;
 
-	m = p = 0;
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
 	while (s1[k] != '\0')
 		k++;
 	while (s2[l] != '\0')
@@ -38,9 +41,5 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		l++;
 	}
 	ptrs[l] = '\0';
-	if (s1 == NULL)
-		s1 = "";
-	if (s2 == NULL)
-		s2 = "";
 	return (ptrs);
 }
