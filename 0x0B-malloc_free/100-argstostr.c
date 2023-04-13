@@ -9,8 +9,11 @@
  */
 char *argstostr(int ac, char **av)
 {
-	int l, y, z, k;
+	int l = 0, y = 0, z = 0, k = 0;
 	char *arstr;
+
+	if (ac == 0 || av == NULL)
+	return (NULL);
 
 	for (l = 0; l < ac; l++)
 	{
@@ -18,7 +21,7 @@ char *argstostr(int ac, char **av)
 			k++;
 	}
 	k += ac;
-	arstr = malloc(sizeof(char) * (k + 1));
+	arstr = malloc(sizeof(char) * k + 1);
 	if (arstr == NULL)
 	{
 		return (NULL);
