@@ -2,6 +2,6 @@
 
 #define FUNCTION_LIKE_MACRO_H
 
-#define ABS(x) ((0) > (x) ? (-x) : (x))
+#define ABS(x) ((0) > (x) ? -(x) : (x))
 
 #endif
