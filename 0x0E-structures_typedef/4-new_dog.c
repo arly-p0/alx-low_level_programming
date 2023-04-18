@@ -18,19 +18,19 @@ int _strlen(char *s)
 }
 /**
  * _strcpy - copy a string
- * @string: destination
- * @src: source value
+ * @dest: pointer to be copied
+ * @src: string
  * Return: always 0
  */
 char *_strcpy(char *dest, char *src)
 {
-	int l;
+	int d;
 
-	for (l = 0; src[l] !='\0'; l++)
+	for (d = 0; src[d] != '\0'; d++)
 	{
-		dest[l] = src[l];
+		dest[d] = src[d];
 	}
-	dest[l++] = '\0';
+	dest[d++] = '\0';
 	return (dest);
 }
 /**
