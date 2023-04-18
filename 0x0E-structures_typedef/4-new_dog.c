@@ -12,10 +12,11 @@ int _strlen(char *s)
 
 	if (*s)
 	{
-		return (d + _strlen(s + 1));
+		return (d + strlen(s + 1));
 	}
 	return (0);
 }
+
 /**
  * _strcpy - copy a string
  * @dest: pointer to be copied
@@ -59,15 +60,15 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(dog);
 		return (NULL);
 	}
-	(*dog).owner = malloc(sizeof(char) * (x2 + 1));
+	(*dog).owner = malloc(x2 + 1 * sizeof(char));
 	if ((*dog).owner == NULL)
 	{
-		free((*dog).name);
 		free(dog);
+		free((*dog).name);
 		return (NULL);
 	}
-	_strcpy((*dog).owner, name);
-	_strcpy((*dog).name, owner);
+	_strcpy((*dog).name, name);
+	_strcpy((*dog).owner, owner);
 	(*dog).age = age;
 
 	return (dog);
