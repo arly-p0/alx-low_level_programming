@@ -3,7 +3,7 @@
 #include "dog.h"
 /**
  * _strlen - a function that return the lenght of a string
- * @s: the lenght of the string
+ * @s: the lenght of the string to returned
  * Return: Always 0.
  */
 int _strlen(char *s)
