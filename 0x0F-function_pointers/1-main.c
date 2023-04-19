@@ -8,4 +8,7 @@
  */
 void print_elem(int elem)
 {
-	printf("%
+	printf("%d\n", elem);
+}
+/**
+ * print_elem_hex
