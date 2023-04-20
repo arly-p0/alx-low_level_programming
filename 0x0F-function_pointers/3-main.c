@@ -11,29 +11,27 @@
 int main(int argc, char *argv[])
 {
 	char *op;
-	int u, v, result;
+	int s, y;
 
 	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	u = atoi(argv[1]);
-	v = atoi(argv[3]);
+	s = atoi(argv[1]);
+	y = atoi(argv[3]);
 	op = argv[2];
 
-	if (get_op_func(op) == NULL || op[1] != '\0')
+	if (op[1] != '\0' || get_op_func(op) == NULL)
 	{
 		printf("Error\n");
 		exit(99);
 	}
-	op = argv[2];
-	if ((*op == '/' || *op == '%') && v == 0)
+	if ((*op == '/' || *op == '%') && y == 0)
 	{
 		printf("Error\n");
 		exit(100);
 	}
-	result = get_op_func(op)(u, v);
-	printf("%d\n", result);
+	printf("%d\n", get_op_func(op)(s, y));
 	return (0);
 }
