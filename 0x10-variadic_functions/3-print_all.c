@@ -12,8 +12,8 @@ void print_all(const char * const format, ...)
 	char *ptrs, *seps = "";
 
 	va_start(arg, format);
-
 	k = 0;
+
 	if (format)
 	{
 		while (format[k])
@@ -31,7 +31,7 @@ void print_all(const char * const format, ...)
 					break;
 				case 's':
 					ptrs = va_arg(arg, char *);
-					if (!ptrs)
+					if (ptrs == NULL)
 					{
 						ptrs = "(nil)";
 					}
@@ -41,7 +41,7 @@ void print_all(const char * const format, ...)
 					k++;
 					continue;
 			}
-			seps = ",";
+			seps = ", ";
 			k++;
 		}
 	}
