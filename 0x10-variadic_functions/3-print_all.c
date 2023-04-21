@@ -27,11 +27,11 @@ void print_all(const char * const format, ...)
 					printf("%s%d", seps, va_arg(arg, int));
 					break;
 				case 'f':
-					printf("%s%d", seps, va_arg(arg, int));
+					printf("%s%f", seps, va_arg(arg, double));
 					break;
 				case 's':
 					ptrs = va_arg(arg, char *);
-					if (ptrs == NULL)
+					if (!ptrs)
 					{
 						ptrs = "(nil)";
 					}
