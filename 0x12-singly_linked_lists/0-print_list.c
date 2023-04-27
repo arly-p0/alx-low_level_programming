@@ -11,15 +11,15 @@ size_t print_list(consist list_t *h)
 
 	strs = 0;
 
-	while ((*h).str == NULL)
+	while (h == NULL)
 	{
 		if ((*h).str == NULL)
 		{
-			printf("[%d] %s\n", strs, "(nil)");
+			printf("[%d] %s\n", 0, "(nil)");
 		}
 		else
 		{
-			printf("[%d] %s\n", (*h).strs, (*h).str);
+			printf("[%d] %s\n", (*h).len, (*h).str);
 		}
 		h = (*h).next;
 		strs++;
