@@ -11,7 +11,7 @@ size_t print_list(consist list_t *h)
 
 	strs = 0;
 
-	while (h == NULL)
+	while (h != NULL)
 	{
 		if ((*h).str == NULL)
 		{
