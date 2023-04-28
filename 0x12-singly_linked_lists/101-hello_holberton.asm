@@ -1,6 +1,6 @@
 Section .data
-message: db "Hello, Hoblberton", 0
-format: db "%s", 10, 0
+	message: db "Hello, Hoblberton", 0
+	format: db "%s", 10, 0
 
 section .text
  	global main
