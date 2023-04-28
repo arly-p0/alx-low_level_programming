@@ -2,7 +2,7 @@
 #include "lists.h"
 /**
  * print_list - function that prints all the elements of a list_t list
- * @h: a pointer to be printed.
+ * @h: a pointer to be printed
  *
  * Return: the number of nodes.
  */
