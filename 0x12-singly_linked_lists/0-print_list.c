@@ -1,3 +1,5 @@
+#include <stdlib.h>
+#include <string.h>
 #include <stdio.h>
 #include "lists.h"
 /**
@@ -7,9 +9,9 @@
  */
 size_t print_list(const list_t *h)
 {
-	size_t strs;
+	size_t ptrs;
 
-	strs = 0;
+	ptrs = 0;
 	while (h != NULL)
 	{
 		if ((*h).str == NULL)
@@ -21,7 +23,7 @@ size_t print_list(const list_t *h)
 			printf("[%d] %s\n", (*h).len, (*h).str);
 		}
 		h = (*h).next;
-		strs++;
+		ptrs++;
 	}
-	return (strs);
+	return (ptrs);
 }
