@@ -1,5 +1,6 @@
 Section .data
-message:      db "Hello, Hoblberton", 0,
+message:      db "Hello, Hoblberton", 0
+fmt:	      db "%s", 10, 0
 
 section .text
  global main
@@ -7,6 +8,7 @@ section .text
 
 main:  
 	mov esi, message
+	mov edi, fmt
 	mov eax, 0
 	call printf
 
