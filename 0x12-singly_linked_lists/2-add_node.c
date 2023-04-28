@@ -21,10 +21,12 @@ list_t *add_node(list_t **head, const char *str)
 	(*new_l).str = strdup(str);
 
 	for (q = 0; str[q]; q++)
+		;
 
 	(*new_l).len = q;
 	(*new_l).next = *head;
 	*head = new_l;
+
 
 	return (*head);
 }
